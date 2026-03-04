@@ -3,10 +3,10 @@ import { RouterProvider, type AnyRouter } from "@tanstack/react-router";
 
 // 2. Update your interface to use AnyRouter
 interface AppProps {
-	router: AnyRouter;
+  router: AnyRouter;
 }
 
 export default function App({ router }: AppProps) {
-	return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }
 
