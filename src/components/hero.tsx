@@ -6,9 +6,9 @@ const Hero = React.memo(function Hero() {
 		<section className="relative min-h-[100vh] flex flex-col items-center justify-center pt-32 pb-20 px-6 text-center overflow-hidden">
 
 			<div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center">
-				<div className="animate-fade-in-up mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-400/30 bg-yellow-400/5 text-yellow-400 text-xs font-bold tracking-widest uppercase">
+				<div className="animate-fade-in-up mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-400/30 bg-yellow-400/5 text-yellow-400 text-xs font-bold tracking-widest">
 					<span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-					Brought to you by <span className="lowercase font-black tracking-normal -mr-[0.15em]">i</span>DEA Club x Amrita School of Computing
+					BROUGHT TO YOU BY iDEA CLUB X AMRITA SCHOOL OF COMPUTING
 				</div>
 
 				<h1 className="font-black leading-[0.9] tracking-tighter flex flex-col items-center justify-center whitespace-nowrap mb-8 text-center uppercase">
