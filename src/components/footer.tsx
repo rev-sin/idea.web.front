@@ -81,17 +81,19 @@ const Footer: React.FC = () => {
 
                 .image-container {
                     position: relative;
-                    width: 100%;
+                    width: 85%;
+                    max-width: 500px;
+                    margin: 0 auto;
                     animation: slideInLeft 1s ease-out;
                     padding-top: 2rem;
                     min-height: 200px;
                 }
 
                 .logo-wrapper {
-                    position: absolute;
-                    top: -35px;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-bottom: 1rem;
                     z-index: 10;
                     animation: slideInUp 1.1s ease-out;
                 }
@@ -100,7 +102,7 @@ const Footer: React.FC = () => {
                     filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.12)); 
                     transition: all 0.3s ease-out;
                     width: 100%;
-                    max-width: 180px;
+                    max-width: 150px;
                     height: auto;
                     display: block;
                     padding: 0.75rem;
@@ -157,10 +159,10 @@ const Footer: React.FC = () => {
 
                 @media (max-width: 1024px) {
                     .logo-wrapper {
-                        top: -28px;
+                        margin-bottom: 0.75rem;
                     }
                     .logo-image {
-                        max-width: 150px;
+                        max-width: 130px;
                     }
                     .image-wrapper {
                         padding: 2.5rem 1rem 1rem;
@@ -173,10 +175,10 @@ const Footer: React.FC = () => {
                 @media (max-width: 640px) {
                     .main-heading { letter-spacing: 0.08em; }
                     .logo-wrapper {
-                        top: -22px;
+                        margin-bottom: 0.5rem;
                     }
                     .logo-image {
-                        max-width: 120px;
+                        max-width: 100px;
                     }
                     .image-wrapper {
                         padding: 2rem 0.5rem 0.5rem;
@@ -188,12 +190,12 @@ const Footer: React.FC = () => {
             `}</style>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
                     {/* Left Column - Images */}
-                    <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center order-2 lg:order-1">
+                    <div className="md:col-span-5 lg:col-span-6 flex items-center justify-center order-2 md:order-1">
                         <div className="image-wrapper w-full">
-                            <div className="image-container">
-                                {/* Logo Overlay */}
+                            <div className="image-container flex flex-col items-center">
+                                {/* Logo Overlay (Moved above building) */}
                                 <div className="logo-wrapper">
                                     <img
                                         src={logoImg}
@@ -217,7 +219,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Right Column - Content */}
-                    <div className="footer-content lg:col-span-6 xl:col-span-6 flex flex-col gap-4 sm:gap-6 order-1 lg:order-2">
+                    <div className="footer-content md:col-span-7 lg:col-span-6 flex flex-col gap-4 sm:gap-6 order-1 md:order-2">
                         {/* Header Section */}
                         <div className="flex flex-col gap-3 sm:gap-4">
                             <h2 className="main-heading glitch-text text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light tracking-widest uppercase leading-tight">
