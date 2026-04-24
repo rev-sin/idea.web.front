@@ -1,12 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import ParticleBackground from '@/components/ui/particle-background'
 import Navbar from '@/components/navbar'
+import { useState } from 'react'
+import { RegistrationClosedModal } from '@/components/registration-closed-modal'
 
 export const Route = createFileRoute('/archives')({
   component: ArchivesRoute,
 })
 
 function ArchivesRoute() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-black text-white relative flex flex-col items-center justify-center overflow-hidden">
       {/* Navbar for navigation back to home */}
@@ -32,16 +36,16 @@ function ArchivesRoute() {
             While you wait for our archives, register for the <span className="text-yellow-400 font-bold">AI in Academia IDEATHON</span>!
           </p>
 
-          <a
-            href="https://forms.office.com/r/nMMTPg4Rua"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-5 bg-yellow-400 text-black font-bold text-xl rounded-2xl hover:bg-yellow-300 hover:scale-105 transition-all shadow-[0_0_40px_rgba(250,204,21,0.3)] outline-none focus-visible:ring-4 ring-yellow-400/50 block"
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="px-10 py-5 bg-yellow-400 text-black font-bold text-xl rounded-2xl hover:bg-yellow-300 hover:scale-105 transition-all shadow-[0_0_40px_rgba(250,204,21,0.3)] outline-none focus-visible:ring-4 ring-yellow-400/50 block cursor-pointer"
           >
             Register Now
-          </a>
+          </button>
         </div>
       </div>
+      <RegistrationClosedModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }

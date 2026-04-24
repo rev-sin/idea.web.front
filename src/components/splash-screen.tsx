@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import logoImg from "@/assets/idea_logo.png";
+import logoImg from "@/assets/idea_logo.webp";
 import amritaLogoImg from "@/assets/amrita-logo.webp";
 
 // ─── Ambient Glow Background ──────────────────────────────────────────────────

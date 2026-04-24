@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avishkarLogo from "../assets/avishkarlogo_withoutbg.png";
+import ideaLogo from "../assets/idea_logo.webp";
 import { Icons } from "./icons";
 
 export default function Navbar() {
@@ -17,16 +18,24 @@ export default function Navbar() {
 
 	return (
 		<nav className="absolute top-0 w-full z-50 bg-transparent py-6">
-			<div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-				<Link to="/" className="flex items-center gap-3">
+			<div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
+				<Link to="/" className="flex items-center gap-3 relative z-10">
 					<img
-						src={avishkarLogo}
-						alt="Avishkar Logo"
-						className="h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]"
+						src={ideaLogo}
+						alt="Idea Logo"
+						className="h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]"
 					/>
 				</Link>
 
-				<div className="hidden md:flex space-x-8 items-center bg-zinc-900/40 backdrop-blur-md px-6 py-2 rounded-full border border-white/5">
+				<div className="absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+					<img
+						src={avishkarLogo}
+						alt="Avishkar Logo"
+						className="h-8 md:h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]"
+					/>
+				</div>
+
+				<div className="hidden md:flex space-x-8 items-center bg-zinc-900/40 backdrop-blur-md px-6 py-2 rounded-full border border-white/5 relative z-10">
 					{links.map((link) => (
 						<Link
 							key={link.name}
@@ -40,7 +49,7 @@ export default function Navbar() {
 
 				<button
 					type="button"
-					className="md:hidden text-white"
+					className="md:hidden text-white relative z-10"
 					aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
 					aria-expanded={mobileMenuOpen}
 					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
